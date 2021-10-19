@@ -1,0 +1,14 @@
+---
+- name: install packages
+  apt:
+    name:
+      - docker
+      - python
+      - docker-compose
+    state: present
+
+- name: enable service
+  service:
+    name: docker
+    state: started
+    enabled: true
